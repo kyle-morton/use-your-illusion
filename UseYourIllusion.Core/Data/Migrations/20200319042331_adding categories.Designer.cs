@@ -3,15 +3,17 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using UseYourIllusion.Core.Data;
 
 namespace UseYourIllusion.Core.Data.Migrations
 {
     [DbContext(typeof(UseYourIllusionDbContext))]
-    partial class UseYourIllusionDbContextModelSnapshot : ModelSnapshot
+    [Migration("20200319042331_adding categories")]
+    partial class addingcategories
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder

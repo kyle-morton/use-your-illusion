@@ -6,6 +6,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using UseYourIllusion.Core.Data;
+using UseYourIllusion.Core.Services;
 using IHostingEnvironment = Microsoft.AspNetCore.Hosting.IHostingEnvironment;
 
 namespace UseYourIllusion.App
@@ -33,7 +34,7 @@ namespace UseYourIllusion.App
             services.AddDbContext<UseYourIllusionDbContext>(options =>
                 options.UseSqlServer(envConfig.GetConnectionString("DefaultConnection")));
 
-            //services.AddTransient<IOrderService, OrderService>();
+            services.AddTransient<ITeamService, TeamService>();
 
             services.AddControllersWithViews();
             // In production, the Angular files will be served from this directory

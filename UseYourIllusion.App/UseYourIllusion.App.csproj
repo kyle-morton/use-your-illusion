@@ -35,7 +35,25 @@
   </ItemGroup>
 
   <ItemGroup>
+    <None Remove="ClientApp\src\app\models\base.model.ts" />
+    <None Remove="ClientApp\src\app\models\index.ts" />
+    <None Remove="ClientApp\src\app\view-models\index.ts" />
+    <None Remove="ClientApp\src\app\view-models\team\index.ts" />
+    <None Remove="ClientApp\src\app\view-models\team\team.view-model.ts" />
+  </ItemGroup>
+
+  <ItemGroup>
     <ProjectReference Include="..\UseYourIllusion.Core\UseYourIllusion.Core.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <TypeScriptCompile Include="ClientApp\src\app\models\base.model.ts" />
+    <TypeScriptCompile Include="ClientApp\src\app\models\index.ts" />
+    <TypeScriptCompile Include="ClientApp\src\app\view-models\index.ts" />
+    <TypeScriptCompile Include="ClientApp\src\app\view-models\team\index.ts">
+      <SubType>Code</SubType>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="ClientApp\src\app\view-models\team\team.view-model.ts" />
   </ItemGroup>
 
   <Target Name="DebugEnsureNodeEnv" BeforeTargets="Build" Condition=" '$(Configuration)' == 'Debug' And !Exists('$(SpaRoot)node_modules') ">
