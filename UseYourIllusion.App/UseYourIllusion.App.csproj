@@ -35,8 +35,10 @@
   </ItemGroup>
 
   <ItemGroup>
+    <None Remove="ClientApp\src\app\components\index.ts" />
     <None Remove="ClientApp\src\app\models\base.model.ts" />
     <None Remove="ClientApp\src\app\models\index.ts" />
+    <None Remove="ClientApp\src\app\services\index.ts" />
     <None Remove="ClientApp\src\app\view-models\index.ts" />
     <None Remove="ClientApp\src\app\view-models\team\index.ts" />
     <None Remove="ClientApp\src\app\view-models\team\team.view-model.ts" />
@@ -47,8 +49,10 @@
   </ItemGroup>
 
   <ItemGroup>
+    <TypeScriptCompile Include="ClientApp\src\app\components\index.ts" />
     <TypeScriptCompile Include="ClientApp\src\app\models\base.model.ts" />
     <TypeScriptCompile Include="ClientApp\src\app\models\index.ts" />
+    <TypeScriptCompile Include="ClientApp\src\app\services\index.ts" />
     <TypeScriptCompile Include="ClientApp\src\app\view-models\index.ts" />
     <TypeScriptCompile Include="ClientApp\src\app\view-models\team\index.ts">
       <SubType>Code</SubType>

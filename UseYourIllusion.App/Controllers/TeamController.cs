@@ -3,7 +3,6 @@ using System.Linq;
 using System.Threading.Tasks;
 using UseYourIllusion.App.ViewModels.Teams;
 using UseYourIllusion.Core.Services;
-using RouteAttribute = Microsoft.AspNetCore.Components.RouteAttribute;
 
 namespace UseYourIllusion.App.Controllers
 {
@@ -19,7 +18,7 @@ namespace UseYourIllusion.App.Controllers
             _teamService = teamService;
         }
 
-        [HttpGet("Get")]
+        [Route("", Name = "GetTeams")]
         public async Task<IActionResult> GetTeams()
         {
             var teams = await _teamService.GetTeamsAsync();
