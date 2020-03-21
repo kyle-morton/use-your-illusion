@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UseYourIllusion.App", "UseY
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UseYourIllusion.Core", "UseYourIllusion.Core\UseYourIllusion.Core.csproj", "{1543F1DD-4B93-45BC-9B80-56CB60071873}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UseYourIllusion.Logic", "UseYourIllusion.Logic\UseYourIllusion.Logic.csproj", "{A124EDD4-AFA7-4F8F-93B4-4AFE24D44313}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{1543F1DD-4B93-45BC-9B80-56CB60071873}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{1543F1DD-4B93-45BC-9B80-56CB60071873}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{1543F1DD-4B93-45BC-9B80-56CB60071873}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A124EDD4-AFA7-4F8F-93B4-4AFE24D44313}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A124EDD4-AFA7-4F8F-93B4-4AFE24D44313}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A124EDD4-AFA7-4F8F-93B4-4AFE24D44313}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A124EDD4-AFA7-4F8F-93B4-4AFE24D44313}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
