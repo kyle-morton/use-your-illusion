@@ -1,11 +1,13 @@
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.SpaServices.AngularCli;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using UseYourIllusion.Core.Data;
+using UseYourIllusion.Core.Data.Models;
 using UseYourIllusion.Core.Services;
 using IHostingEnvironment = Microsoft.AspNetCore.Hosting.IHostingEnvironment;
 
@@ -33,6 +35,13 @@ namespace UseYourIllusion.App
 
             services.AddDbContext<UseYourIllusionDbContext>(options =>
                 options.UseSqlServer(envConfig.GetConnectionString("DefaultConnection")));
+
+            services.AddDefaultIdentity<ApplicationUser>()
+                .AddDefaultUI()
+                .AddEntityFrameworkStores<UseYourIllusionDbContext>();
+
+            services.AddIdentityServer()
+                .AddApiAuthorization<ApplicationUser, UseYourIllusionDbContext>();
 
             services.AddTransient<ITeamService, TeamService>();
 
