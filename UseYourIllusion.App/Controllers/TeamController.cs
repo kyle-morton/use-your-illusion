@@ -24,5 +24,26 @@ namespace UseYourIllusion.App.Controllers
             var teams = await _teamService.GetTeamsAsync();
             return Ok(teams.Select(TeamViewModel.From).ToList());
         }
+
+        [Route("{id}", Name = "GetTeam")]
+        public async Task<IActionResult> GetTeam(int id)
+        {
+            var team = await _teamService.GetTeamAsync(id);
+            return Ok(TeamViewModel.From(team));
+        }
+        
+        [HttpPut]
+        [Route("{id}", Name = "UpdateTeam")]
+        public async Task<IActionResult> UpdateTeam(int id, TeamViewModel team)
+        {
+            if (!ModelState.IsValid)
+            {
+                // todo: add GetErrors()...
+            }
+
+            await _teamService.UpdateAsync(team.ToModel());
+
+            return Ok(team);
+        }
     }
 }

@@ -7,6 +7,8 @@ import { RouterModule } from '@angular/router';
 import { AppComponent } from './app.component';
 import { NavMenuComponent, HomeComponent, TeamListComponent } from './components';
 import { TeamDetailsComponent } from './components/team/team-details/team-details.component';
+import { routes } from './app.routing';
+import { TeamCreateComponent } from './components/team/team-create/team-create.component';
 
 @NgModule({
   declarations: [
@@ -14,20 +16,14 @@ import { TeamDetailsComponent } from './components/team/team-details/team-detail
     NavMenuComponent,
     HomeComponent,
     TeamListComponent,
-    TeamDetailsComponent
+    TeamDetailsComponent,
+    TeamCreateComponent
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'ng-cli-universal' }),
     HttpClientModule,
     FormsModule,
-    RouterModule.forRoot([
-      { path: '', component: HomeComponent, pathMatch: 'full' },
-      { path: 'teams', children: [
-          { path: '', component: TeamListComponent },
-          { path: ':id', component: TeamDetailsComponent }
-        ]
-      },
-    ])
+    RouterModule.forRoot(routes)
   ],
   providers: [],
   bootstrap: [AppComponent]
