@@ -1,3 +1,4 @@
+using Microsoft.AspNetCore.Authentication;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Identity;
@@ -36,13 +37,12 @@ namespace UseYourIllusion.App
             services.AddDbContext<UseYourIllusionDbContext>(options =>
                 options.UseSqlServer(envConfig.GetConnectionString("DefaultConnection")));
 
-            services.AddDefaultIdentity<ApplicationUser>()
-                .AddDefaultUI()
-                .AddEntityFrameworkStores<UseYourIllusionDbContext>();
+            // API Auth
+            services.AddDefaultIdentity<ApplicationUser>().AddDefaultUI().AddEntityFrameworkStores<UseYourIllusionDbContext>();
+            services.AddIdentityServer().AddApiAuthorization<ApplicationUser, UseYourIllusionDbContext>();
+            services.AddAuthentication().AddIdentityServerJwt();
 
-            services.AddIdentityServer()
-                .AddApiAuthorization<ApplicationUser, UseYourIllusionDbContext>();
-
+            // Service/Client DI
             services.AddTransient<ITeamService, TeamService>();
 
             services.AddControllersWithViews();
@@ -66,6 +66,10 @@ namespace UseYourIllusion.App
                 // The default HSTS value is 30 days. You may want to change this for production scenarios, see https://aka.ms/aspnetcore-hsts.
                 app.UseHsts();
             }
+
+            // auth
+            app.UseAuthentication();
+            app.UseIdentityServer();
 
             app.UseHttpsRedirection();
             app.UseStaticFiles();

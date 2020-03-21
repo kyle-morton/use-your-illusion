@@ -1,12 +1,18 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using IdentityServer4.EntityFramework.Options;
+using Microsoft.AspNetCore.ApiAuthorization.IdentityServer;
+using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Options;
 using UseYourIllusion.Core.Data.Models;
 
 namespace UseYourIllusion.Core.Data
 {
-    public class UseYourIllusionDbContext : DbContext
+    public class UseYourIllusionDbContext : ApiAuthorizationDbContext<ApplicationUser>
     {
 
-        public UseYourIllusionDbContext(DbContextOptions<UseYourIllusionDbContext> options) : base(options)
+        public UseYourIllusionDbContext(
+            DbContextOptions<UseYourIllusionDbContext> options, 
+            IOptions<OperationalStoreOptions> operationalStoreOptions) 
+        : base(options, operationalStoreOptions)
         {
         }
 
