@@ -11,6 +11,8 @@ import { routes } from './app.routing';
 import { TeamCreateComponent } from './components/team/team-create/team-create.component';
 import { ApiAuthorizationModule } from 'src/auth/api-authorization.module';
 import { AuthorizeInterceptor } from 'src/auth/authorize.interceptor';
+import { ToastrModule } from 'ngx-toastr';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
   declarations: [
@@ -26,7 +28,9 @@ import { AuthorizeInterceptor } from 'src/auth/authorize.interceptor';
     HttpClientModule,
     FormsModule,
     ApiAuthorizationModule,
-    RouterModule.forRoot(routes)
+    RouterModule.forRoot(routes),
+    BrowserAnimationsModule, 
+    ToastrModule.forRoot() 
   ],
   providers: [
     { provide: HTTP_INTERCEPTORS, useClass: AuthorizeInterceptor, multi: true }

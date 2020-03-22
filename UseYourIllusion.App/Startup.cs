@@ -98,10 +98,14 @@ namespace UseYourIllusion.App
                 // see https://go.microsoft.com/fwlink/?linkid=864501
 
                 spa.Options.SourcePath = "ClientApp";
-
+                
                 if (env.IsDevelopment())
                 {
-                    spa.UseAngularCliServer(npmScript: "start");
+                    // workaround for core 3.1 -> have to use proxy, run npm start on client app folder in cmd 
+                    spa.UseProxyToSpaDevelopmentServer("http://localhost:4200");
+
+
+                    //spa.UseAngularCliServer(npmScript: "start");
                 }
             });
         }
