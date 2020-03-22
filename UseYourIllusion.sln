@@ -3,9 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.29911.84
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UseYourIllusion.App", "UseYourIllusion.App\UseYourIllusion.App.csproj", "{182E2AB9-DEB9-45A4-B5BF-C60869CF67AF}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "UseYourIllusion.App", "UseYourIllusion.App\UseYourIllusion.App.csproj", "{182E2AB9-DEB9-45A4-B5BF-C60869CF67AF}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UseYourIllusion.Core", "UseYourIllusion.Core\UseYourIllusion.Core.csproj", "{A124EDD4-AFA7-4F8F-93B4-4AFE24D44313}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "UseYourIllusion.Core", "UseYourIllusion.Core\UseYourIllusion.Core.csproj", "{A124EDD4-AFA7-4F8F-93B4-4AFE24D44313}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
