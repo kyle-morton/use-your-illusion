@@ -10,6 +10,7 @@ import { TeamDetailsComponent } from './components/team/team-details/team-detail
 import { routes } from './app.routing';
 import { TeamCreateComponent } from './components/team/team-create/team-create.component';
 import { ApiAuthorizationModule } from 'src/auth/api-authorization.module';
+import { AuthorizeInterceptor } from 'src/auth/authorize.interceptor';
 
 @NgModule({
   declarations: [
@@ -27,7 +28,9 @@ import { ApiAuthorizationModule } from 'src/auth/api-authorization.module';
     ApiAuthorizationModule,
     RouterModule.forRoot(routes)
   ],
-  providers: [],
+  providers: [
+    { provide: HTTP_INTERCEPTORS, useClass: AuthorizeInterceptor, multi: true }
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
